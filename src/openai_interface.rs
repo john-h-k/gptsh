@@ -25,8 +25,8 @@ pub async fn complete(context: &OpenAiContext, prompt: &str) -> Result<Value, re
         .json(&json!({
             "model": "text-davinci-003",
             "prompt": prompt,
-            "max_tokens": 100,
-            "temperature": 0.2
+            "max_tokens": 1024,
+            "temperature": 0
         }))
         .send()
         .await?;
